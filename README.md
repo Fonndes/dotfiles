@@ -1,2 +1,5 @@
-# dotfiles
-my dotfiles
+# THEME
+catppuccin
+
+# ICONS
+ePapirus-dark
