@@ -19,3 +19,4 @@ vim.opt.smartindent = true
 -- Clipboard
 vim.opt.clipboard = "unnamedplus"
 
+vim.cmd('set noswapfile')

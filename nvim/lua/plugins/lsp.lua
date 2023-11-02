@@ -41,3 +41,9 @@ cmp.setup({
         ['<CR>'] = cmp.mapping.confirm({ select = true })
     },
 })
+
+cmp = { 'clangd' }
+vim.diagnostic.config({
+  virtual_text=true,
+  update_in_insert=true
+})
