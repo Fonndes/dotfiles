@@ -3,11 +3,14 @@ local frappe = require("catppuccin.palettes").get_palette "frappe"
 local macchiato = require("catppuccin.palettes").get_palette "macchiato"
 local mocha = require("catppuccin.palettes").get_palette "mocha"
 
-vim.cmd.colorscheme "catppuccin-macchiato"
 
-require('lualine').setup {
-    options = {
-        theme = "catppuccin"
-        -- ... the rest of your lualine config
-    }
-}
+
+function Colors(color)
+  vim.o.termguicolors = true
+  color = color or "gruvbox-material"
+  vim.o.background = "dark" -- or "light" for light mod
+  vim.cmd [[ colorscheme gruvbox-material ]]
+  return color
+end
+
+Colors()

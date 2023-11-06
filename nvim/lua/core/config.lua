@@ -7,8 +7,9 @@ vim.opt.mouse = "a"
 vim.opt.mousefocus = true
 
 -- Line Numbers
+vim.opt.relativenumber = true
 vim.opt.number = true
-
+vim.opt.cursorline = true
 -- Indent Settings
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2

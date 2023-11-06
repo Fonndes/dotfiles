@@ -16,7 +16,6 @@
         "memory",
         "battery",
         "network",
-        "bluetooth",
         "pulseaudio",
         "clock",
         "custom/power",
@@ -113,12 +112,6 @@
         "tooltip-format-deactivated": "power-saving enabled"
     },
 
-    "custom/dunst": {
-        "exec": "/usr/share/sway/scripts/dunst.sh",
-        "on-click": "dunstctl set-paused toggle",
-        "restart-interval": 1,
-    },
-    
     "sway/language": {
         "format": "   {}",
         "min-length": 5,
@@ -159,11 +152,6 @@
     
     },
 
-    "battery": {
-        "format": "{icon} {capacity}%",
-        "format-icons": [" ", " ", " ", " ", " "]
-    },
-
     "network": {
        "format-wifi": " ({signalStrength}%)",
        "format-ethernet": " ",
@@ -175,14 +163,6 @@
        "tooltip-format-disconnected": "{icon} disconnected",
        "tooltip-format-disabled": "{icon} disabled",
        "on-click": "swaymsg exec \\$flock \\$term_float nmtui connect"
-    },
-
-    "bluetooth": {
-        "format": "",
-        "format-disabled": "",
-        "on-click": "swaymsg exec \\$bluetooth",
-        "on-click-right": "rfkill toggle bluetooth",
-        "tooltip-format": "{}"
     },
 
     "pulseaudio": {

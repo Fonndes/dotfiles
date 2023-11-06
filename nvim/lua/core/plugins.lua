@@ -45,4 +45,10 @@ require("lazy").setup({
   dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
 },
 { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+{
+    'nvim-telescope/telescope.nvim', tag = '0.1.4',
+      dependencies = { 'nvim-lua/plenary.nvim' }
+},
+{ "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
+{'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 })

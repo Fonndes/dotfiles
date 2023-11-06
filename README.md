@@ -1,5 +1,4 @@
 # THEME
-catppuccin
-
+gruvbox/gruvbox-material
 # ICONS
 ePapirus-dark

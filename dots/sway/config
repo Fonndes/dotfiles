@@ -4,7 +4,6 @@
 #
 # Read `man 5 sway` for a complete reference.
 
-include /usr/share/themes/catppuccin-i3/catppuccin-macchiato
 
 font pango: Noto Sans 12
 
@@ -14,7 +13,7 @@ set $gui-font Noto Sans 12
 gaps inner 8
 gaps outer 4
 
-default_border pixel 2
+for_window [class="^.*"] border pixel 1
 
 smart_borders on
 smart_gaps on
@@ -40,7 +39,7 @@ set $term_float xfce4-terminal --class floating_shell -e
 # on the original workspace that the command was run on.
 set $menu wofi --show drun
 set $autotiling '[ -x "$(command -v autotiling)" ] && autotiling -w 1 3 5 7 9'
-set $pcmanfm_daemon '[ -x "$(command -v pcmanfm)" ] && pcmanfm-qt -d'
+set $pcmanfm_daemon '[ -x "$(command -v pcmanfm)" ] && pcmanfm -d'
 set $grimshot /usr/bin/grimshot
 set $pipe_output $grimshot save output -
 set $pipe_selection $grimshot save window -
@@ -95,7 +94,7 @@ $bindsym $mod+Shift+p exec $clipboard
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/fonndes/Downloads/wallpaper.png fill
+output * bg /home/fonndes/Downloads/ALLqk82.png fill
 #
 # Example configuration:
 #
@@ -138,7 +137,7 @@ output * bg /home/fonndes/Downloads/wallpaper.png fill
     $bindsym $mod+Return exec $term
 
     # Kill focused window
-    $bindsym $mod+Shift+q kill
+    $bindsym $mod+q kill
 
     # Start your launcher
     $bindsym $mod+d exec $menu
@@ -285,6 +284,15 @@ bindsym $mod+r mode "resize"
 bar {
 	swaybar_command waybar
 }
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #83a598 #83a598 #ebdbb2 #83a598   #83a598
+client.focused_inactive #d5c4a1 #d5c4a1 #282828 #d5c4a1   #d5c4a1
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffrf
 
 include /etc/sway/config.d/*
 include keyboard
