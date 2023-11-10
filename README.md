@@ -22,7 +22,6 @@
 |FONT|[iosevka-nerd-mono](https://archlinux.org/packages/extra/any/ttf-iosevka-nerd)|
 
 # Install dependencies
-**Soft:** 
 **pacman:**
 ```Bash
 sudo pacman -S wofi sway swaylock swayidle nvim neofetch btop waybar puslemixer pipewire pipewire-alsa pipewire-pulse piperwire-jack wireplumber xfce4-terminal
