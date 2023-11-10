@@ -18,7 +18,7 @@
 |SHELL|[Bash](https://www.gnu.org/software/bash)|
 |ICON|[ePapirus-dark](https://www.pling.com/p/1532276)|
 |GTK3|[gruvbox-material-dark](https://aur.archlinux.org/packages/gruvbox-material-gtk-theme-git)|
-|CURSORS|[Capitaine-cursors](https://github.com/keeferrourke/capitaine-cursors)|
+|CURSORS|[Adwaita-cursors](https://gitlab.gnome.org/GNOME/adwaita-icon-theme/-/tree/master/Adwaita/cursors)|
 |FONT|[iosevka-nerd-mono](https://archlinux.org/packages/extra/any/ttf-iosevka-nerd)|
 
 # Install dependencies
