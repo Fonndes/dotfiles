@@ -21,7 +21,17 @@ require("lazy").setup({
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
       -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    		}
+    	},
+    opts = {
+    filesystem = {
+      filtered_items = {
+        visible = true, -- This is what you want: If you set this to `true`, all "hide" just mean "dimmed out"
+        hide_dotfiles = true,
+        hide_gitignored = true,
+        }
+      }
+    },
+
 	},
 { 'nvim-treesitter/nvim-treesitter' },
 { 'neovim/nvim-lspconfig' },
@@ -31,7 +41,8 @@ require("lazy").setup({
 { "williamboman/mason.nvim", 
 	opts = { 
 		ensure_installed = { 
-			"clangd" 
+			"clangd",
+      "codelldb",
 		} 
 	} 
 },
@@ -65,5 +76,62 @@ require("lazy").setup({
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
-}
+},
+{ 
+  'mfussenegger/nvim-dap',
+  config = function()
+    vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermbg = 0, fg = "#993939", bg = "#6e3405" })
+    vim.api.nvim_set_hl(0, "DapBreakpointLine", { ctermbg = 0, fg = "#ffffff", bg = "#6e3405" })
+    vim.api.nvim_set_hl(0, "DapLogPoint", { ctermbg = 0, fg = "#61afef", bg = "#6e3405" })
+    vim.api.nvim_set_hl(0, "DapStopped", { ctermbg = 0, fg = "#000000", bg = "#98c379" })
+    vim.fn.sign_define(
+      "DapBreakpoint",
+      { text = "🛑", texthl = "DapBreakpointLine", linehl = "DapBreakpointLine", numhl = "DapBreakpointLine" }
+    )
+    vim.fn.sign_define(
+      "DapBreakpointCondition",
+      { text = "ﳁ", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+      )
+      vim.fn.sign_define(
+        "DapBreakpointRejected",
+        { text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+      )
+      vim.fn.sign_define("DapLogPoint", {
+        text = "",
+        texthl = "DapLogPoint",
+        linehl = "DapLogPoint",
+        numhl = "DapLogPoint",
+      })
+      vim.fn.sign_define(
+        "DapStopped",
+        { text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" }
+      )
+    end,
+},
+{ 
+  "jay-babu/mason-nvim-dap.nvim",
+  event = "VeryLazy",
+  dependencies = {
+    "williamboman/mason.nvim",
+    "mfussenegger/nvim-dap",
+  },
+},
+{ 
+  "rcarriga/nvim-dap-ui",
+  dependencies = "mfussenegger/nvim-dap",
+  config = function()
+    local dap = require("dap")
+    local dapui = require("dapui")
+    dapui.setup()
+    dap.listeners.after.event_initialized["dapui_config"] = function()
+      dapui.open()
+    end
+    dap.listeners.before.event_terminated["dapui_config"] = function()
+      dapui.close()
+    end
+    dap.listeners.before.event_exited["dapui_config"] = function()
+      dapui.close()
+    end
+  end
+},
 })
