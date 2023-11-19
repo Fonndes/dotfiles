@@ -1,7 +1,6 @@
 # Screenshots
-![screen](https://github.com/Fonndes/dotfiles/blob/main/screenshots/screen.png)
-![wofi](https://github.com/Fonndes/dotfiles/blob/main/screenshots/screen1.png)
-![nvim](https://github.com/Fonndes/dotfiles/blob/main/screenshots/screen2.png)
+![screen](https://github.com/Fonndes/dotfiles/blob/main/screenshots/screen.jpg)
+![nvim](https://github.com/Fonndes/dotfiles/blob/main/screenshots/screen_nvim.jpg)
 
 # Wallpapers
 ![wallpapers](https://github.com/Fonndes/dotfiles/blob/main/wallpaper/1234.jpg)
