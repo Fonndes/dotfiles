@@ -79,34 +79,6 @@ require("lazy").setup({
 },
 { 
   'mfussenegger/nvim-dap',
-  config = function()
-    vim.api.nvim_set_hl(0, "DapBreakpoint", { ctermbg = 0, fg = "#993939", bg = "#6e3405" })
-    vim.api.nvim_set_hl(0, "DapBreakpointLine", { ctermbg = 0, fg = "#ffffff", bg = "#6e3405" })
-    vim.api.nvim_set_hl(0, "DapLogPoint", { ctermbg = 0, fg = "#61afef", bg = "#6e3405" })
-    vim.api.nvim_set_hl(0, "DapStopped", { ctermbg = 0, fg = "#000000", bg = "#98c379" })
-    vim.fn.sign_define(
-      "DapBreakpoint",
-      { text = "🛑", texthl = "DapBreakpointLine", linehl = "DapBreakpointLine", numhl = "DapBreakpointLine" }
-    )
-    vim.fn.sign_define(
-      "DapBreakpointCondition",
-      { text = "ﳁ", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
-      )
-      vim.fn.sign_define(
-        "DapBreakpointRejected",
-        { text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
-      )
-      vim.fn.sign_define("DapLogPoint", {
-        text = "",
-        texthl = "DapLogPoint",
-        linehl = "DapLogPoint",
-        numhl = "DapLogPoint",
-      })
-      vim.fn.sign_define(
-        "DapStopped",
-        { text = "", texthl = "DapStopped", linehl = "DapStopped", numhl = "DapStopped" }
-      )
-    end,
 },
 { 
   "jay-babu/mason-nvim-dap.nvim",
@@ -134,4 +106,12 @@ require("lazy").setup({
     end
   end
 },
+{
+  "NvChad/nvterm",
+  config = function ()
+    require("nvterm").setup()
+  end,
+},
+{ 'rose-pine/neovim' },
+{ 'Shatur/neovim-ayu' }
 })
