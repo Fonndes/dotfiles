@@ -3,7 +3,7 @@
 ![nvim](https://github.com/Fonndes/dotfiles/blob/main/screenshots/screen_nvim.jpg)
 
 # Wallpapers
-![wallpapers](https://github.com/Fonndes/dotfiles/blob/main/wallpaper/PixelartCity.jpg)
+![wallpapers](https://github.com/Fonndes/dotfiles/blob/main/wallpapers/PixelartCity.jpg)
 
 # Info
 
