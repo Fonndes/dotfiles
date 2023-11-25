@@ -1,9 +1,9 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 30,
+    "height": 34,
     "modules-left": ["custom/menu", "sway/workspaces", "sway/window"],
-    "modules-center": ["custom/wf-recorder", "sway/mode"],
+    "modules-center": ["clock"],
     "modules-right": [
         "custom/scratchpad",
         "custom/playerctl",
@@ -17,7 +17,6 @@
         "battery",
         "network",
         "pulseaudio",
-        "clock",
         "custom/power",
         "tray"
     ],
@@ -37,22 +36,6 @@
         "format": "{}",
         "max-length": 50,
         "tooltip": true
-    },
-
-    "custom/wf-recorder": {
-         "interval": "once",
-         "return-type": "json",
-         "format": "{}",
-         "tooltip-format": "{tooltip}",
-         "exec": "echo '{\"class\": \"recording\",\"text\":\"\",\"tooltip\":\"press $mod+Esc to stop recording\"}'",
-         "exec-if": "pgrep wf-recorder",
-         "on-click": "killall -s SIGINT wf-recorder",
-         "signal": 8
-    },
-
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>",
-        "tooltip": false
     },
 
     "custom/scratchpad": {
@@ -133,7 +116,7 @@
 
     "cpu": {
         "interval": 5,
-        "format": "  {usage}%",
+        "format": "  {usage}%",
         "states": {
           "warning": 70,
           "critical": 90
@@ -143,7 +126,7 @@
 
     "memory": {
         "interval": 30,
-        "format": "  {}%",
+        "format": "  {}%",
         "states": {
           "warning": 70,
           "critical": 90
@@ -185,9 +168,9 @@
     },
     
     "clock": {
-        "format": "{:%e %b %H:%M}",
+        "format": "  {:%e %b %H:%M}",
         "tooltip": true,
-        "tooltip-format": "{:%d.%m.%Y %H:%M}",
+        "tooltip-format": "  {:%d.%m.%Y %H:%M}",
         "interval": 5,
         "on-click": "swaymsg exec \\$calendar"
     },
