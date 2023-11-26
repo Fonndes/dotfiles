@@ -6,10 +6,13 @@ local mocha = require("catppuccin.palettes").get_palette "mocha"
 
 
 function Colors(color)
-  --vim.o.termguicolors = true
-  color = color or "rose-pine"
-  require("rose-pine").setup({
-    disable_italics = true,
+  vim.o.termguicolors = true
+  color = color or "catppuccin-macchiato"
+  require("catppuccin").setup({
+    flavor = "macchiato",
+    no_italic = true,
+    no_bold = true,
+    no_underline = false,
   })
   --vim.o.background = "dark" -- or "light" for light mod
   --vim.cmd [[ colorscheme gruvbox-material ]]
