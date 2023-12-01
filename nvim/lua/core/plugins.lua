@@ -112,6 +112,10 @@ require("lazy").setup({
     require("nvterm").setup()
   end,
 },
-{ 'rose-pine/neovim' },
-{ 'Shatur/neovim-ayu' }
+{
+    'goolord/alpha-nvim',
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.dashboard'.config)
+    end
+},
 })
